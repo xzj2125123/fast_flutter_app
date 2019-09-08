@@ -20,8 +20,7 @@ class HttpUtils {
     var time = DateTime.now().millisecondsSinceEpoch;
     var uid = prefs.getString('uid') ?? 150.toString();
     var parames = ParameterUtils.encryptData(data,  uid,  time);
-    var s="/{$}";
-    var sign = "{'data': + $parames + }&"+"+$+uid+"&/$"+time";
+    var sign = "{'data': + $parames + }&$uid&$time";
     var signStr = sha1.convert(utf8.encode(sign));
     options.headers.addAll({"sign": signStr});
     BaseResp<T> baseResp = await DioUtil()
