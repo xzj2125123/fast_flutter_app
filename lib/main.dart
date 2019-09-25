@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provide/provide.dart';
+import 'package:xzj_fast_flutter_app/provide/UserProvide.dart';
 import 'pages/index_cart.dart';
 import 'pages/index_home.dart';
 import 'pages/index_shop.dart';
 import 'pages/index_my.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  var provide=UserProvide();
+  var provides =Providers();
+  provides..provide(Provider<UserProvide>.value(provide));
+  runApp(ProviderNode(child: MyApp(),providers: provides));
+}
 
 class MyApp extends StatelessWidget {
   @override

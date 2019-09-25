@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provide/provide.dart';
 import 'package:xzj_fast_flutter_app/bean/UserBean.dart';
 import 'package:xzj_fast_flutter_app/model/MainModel.dart';
+import 'package:xzj_fast_flutter_app/provide/UserProvide.dart';
 
 class IndexHomePage extends StatefulWidget {
   @override
@@ -13,11 +15,6 @@ class _MyHomePageState extends State<StatefulWidget> {
   UserBean bean;
   @override
   void initState() {
-    MainModelControl.getInstans().logion("18569662755", "1234",onSuccessful: (UserBean userBean){
-      setState(() {
-        bean = userBean;
-      });
-    });
     super.initState();
   }
 
@@ -28,7 +25,13 @@ class _MyHomePageState extends State<StatefulWidget> {
       body: Container(
           color: Colors.red[400],
           alignment: Alignment.center,
-          child: Text(bean.toString())),
+          child: RaisedButton(
+            onPressed: (){
+              Provide.value<UserProvide>(context).upAddCount();
+            },
+            child: Text("点击获取用户数据"),
+          )
+      ),
     );
   }
 }

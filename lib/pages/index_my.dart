@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provide/provide.dart';
+import 'package:xzj_fast_flutter_app/provide/UserProvide.dart';
 
 class IndexMyPage extends StatelessWidget {
   @override
@@ -7,7 +9,12 @@ class IndexMyPage extends StatelessWidget {
       body: Container(
           color: Colors.yellow[400],
           alignment: Alignment.center,
-          child: Text('我说w我的')),
+          child:Provide<UserProvide>(
+            builder:(context,child,userProvide){
+              return Text("${userProvide.userBean.toJson()}");
+          }
+          ),
+          )
     );
   }
 }
