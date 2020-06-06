@@ -22,7 +22,7 @@ class MainModelControl {
    */
   Future<UserBean> logion(String mobile, String code,
       {Function onSuccessful(UserBean bean), BuildContext context}) async {
-    HttpUtils.post<Map<String, dynamic>>(Urls.USER_GET_VERSION_INFO,data:{"uid":150},
+    HttpUtils.post<Map<String, String>>(Urls.USER_GETINFO,data:{"channel_id":"1"},
         onSuccessful: (t) {
       if (onSuccessful != null) onSuccessful(UserBean.fromJson(t));
     }, printError: (s) {

@@ -17,11 +17,12 @@ class HttpUtils {
       Function printError(String e)}) async {
     var options = getOptions();
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    var time = DateTime.now().millisecondsSinceEpoch;
-    var uid = prefs.getString('uid') ?? 150.toString();
-    var parames = ParameterUtils.encryptData(data,  uid,  time);
-    var sign = "{'data': + $parames + }&$uid&$time";
-
+//    var time = DateTime.now().millisecondsSinceEpoch;
+    var time = 1591421097116;
+    var uid = prefs.getString('uid') ?? 291557.toString();
+    var parames = await ParameterUtils.ebncrypDataCopy(data,  uid,  time);
+    var sign = "{'data':$parames}&\$$uid&\$$time";
+print("-------------------\$$sign----------------");
     var signStr = sha1.convert(utf8.encode(sign));
     options.headers.addAll({"sign": signStr});
     BaseResp<T> baseResp = await DioUtil()

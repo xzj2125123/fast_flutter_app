@@ -34,15 +34,15 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<BottomNavigationBarItem> bottomTabs = [
     BottomNavigationBarItem(
       icon: Icon(Icons.home),
-      title: Text('主页'),
+      title: Text('律师馆'),
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.search),
-      title: Text('商品'),
+      icon: Icon(Icons.message),
+      title: Text('消息'),
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.shopping_cart),
-      title: Text('购物车'),
+      title: Text('社区'),
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.person),
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '银港水晶城',
+          '律师馆',
           style: TextStyle(fontSize: 18, color: Colors.yellow),
         ),
         backgroundColor: Colors.blue,

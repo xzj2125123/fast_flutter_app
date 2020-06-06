@@ -462,7 +462,7 @@ class DioUtil {
   /// get Def Options.
   static BaseOptions getDefOptions() {
     BaseOptions options = BaseOptions();
-    options.contentType = ContentType.parse("application/json; charset=utf-8");
+    options.contentType = ContentType.parse("application/x-www-form-urlencoded");
     options.connectTimeout = 10000 * 30;
     options.receiveTimeout = 10000 * 30;
     return options;

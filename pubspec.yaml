@@ -17,9 +17,10 @@ dependencies:
   fluro: ^1.5.1
   shared_preferences: ^0.5.3+4
   fluttertoast: ^3.1.3
+  flutter_string_encryption: ^0.3.1
   flutter_cipher: ^0.0.3
   crypto: ^2.1.2
-  cipher2: ^0.3.5
+  cipher2: any
   utf: ^0.9.0+5
   flutter_screenutil: ^0.6.0
   provide: ^1.0.2
