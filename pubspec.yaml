@@ -24,6 +24,7 @@ dependencies:
   utf: ^0.9.0+5
   flutter_screenutil: ^0.6.0
   provide: ^1.0.2
+  encrypt: ^4.0.0
 
 dev_dependencies:
   flutter_test:
